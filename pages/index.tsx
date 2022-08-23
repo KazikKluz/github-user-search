@@ -5,7 +5,6 @@ import { Octokit } from 'octokit';
 import Navbar from '../components/navbar/navbar.component';
 import Searchbox from '../components/searchbox/searchbox.component';
 import Mainbox from '../components/mainbox/mainbox.component';
-import { response } from 'msw';
 
 const octokit = new Octokit({
   auth: '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',
@@ -27,7 +26,6 @@ export type User = {
 };
 
 const Home: NextPage = () => {
-  const [isLightMode, setMode] = useState(true);
   const [isUser, setIsUser] = useState(true);
   const [user, setUser] = useState<User>({
     name: '',
@@ -43,10 +41,6 @@ const Home: NextPage = () => {
     blog: '',
     company: '',
   });
-
-  const handleMode = () => {
-    setMode((prevState) => !prevState);
-  };
 
   const fetchData = async (user: string) => {
     await octokit
@@ -80,7 +74,7 @@ const Home: NextPage = () => {
   };
   return (
     <>
-      <Navbar mode={isLightMode} handleClick={handleMode} />
+      <Navbar />
       <Searchbox fetchData={fetchData} isUser={isUser} />
       <Mainbox user={user} />
     </>
