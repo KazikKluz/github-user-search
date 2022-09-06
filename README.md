@@ -47,4 +47,4 @@ Users should be able to:
 
 - Website - [www.kazikkluz.com](https://www.kazikkluz.com)
 - Frontend Mentor - [Kazik Kluz](https://www.frontendmentor.io/profile/KazikKluz)
-- Twitter - [@yourusername](https://www.twitter.com/Kazik_Kluz)
+- Twitter - [@Kazik_Kluz](https://www.twitter.com/Kazik_Kluz)
