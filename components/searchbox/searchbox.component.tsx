@@ -26,6 +26,9 @@ const Searchbox = ({ fetchData, isUser }: ReactProps) => {
         alt='searchbox'
         value={text}
         onChange={(e) => handleChange(e)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') fetchData(text);
+        }}
       />
       <div className={`${styles.warning} ${isUser ? '' : styles.visible}`}>
         No results
